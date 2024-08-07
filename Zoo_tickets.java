@@ -1,14 +1,13 @@
 
 public class Zoo_tickets {
-		// Usage example to get the discount as a percentage:
-		// int percentage = 100 - (int)(getDiscount(month) * 100);
-		// This might be stupid.
+		// To get percentage for printReceipt:
+		// int percentage = (int)(getDiscount(month) * 100);
 		public static float getDiscount(String month) {
 			
-			float discount = 1.0f;
+			float discount = 0.0f;
 			
 			switch (month) {
-			case "February": discount = 0.85f; break;
+			case "February": discount = 0.15f; break;
 			
 			case "January":
 			case "March":
@@ -17,7 +16,7 @@ public class Zoo_tickets {
 			case "August":
 			case "October":
 			case "December":
-				discount = 0.9f; break;
+				discount = 0.10f; break;
 			
 			case "April":
 			case "June":
@@ -31,23 +30,25 @@ public class Zoo_tickets {
 		}
 		
 		public static float calculatePrice(int childTickets, int adultTickets, String month) {
+			// Price of the tickets without discount.
+			float ticketsPrice = (childTickets * 18) + (adultTickets * 25);
 			
-			float total = 0.0f;
+			ticketsPrice -= ticketsPrice * getDiscount(month);
 			
-			if (childTickets > 0) {
-				total += (childTickets * 18) * getDiscount(month);
-			}
-			if (adultTickets > 0) {
-				total += (adultTickets * 25) * getDiscount(month);
-			}
-			
-			return total;
+			return ticketsPrice;
 		}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		System.out.println("Hello World");
+		
+		// Lines below are just for testing the methods
+		float totalPrice = calculatePrice(3, 2, "February");
+		int percentage = (int)(getDiscount("February") * 100);
+		
+		System.out.printf("Total: $%.2f\n", totalPrice);
+		System.out.printf("%d%%\n", percentage);
 	}
 
 }
