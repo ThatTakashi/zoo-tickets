@@ -37,6 +37,43 @@ public class Zoo_tickets {
 			
 			return ticketsPrice;
 		}
+		
+		// Made by Q
+		// Takes in a ShowID and returns a string with the 
+		// show name and times it is performed
+		
+		public static String printShowSchedule(int showId) {
+			
+			String showSchedule;
+			
+			switch (showId) {
+			
+			case 1: showSchedule = String.format("The %s is scheduled for %s", "Bird Show", "12:30 PM"); break;
+			
+			case 2: showSchedule = String.format("The %s is scheduled for %s", "Splash Safari", "2:00 PM"); break;
+			
+			case 3: showSchedule = String.format("The %s is scheduled for %s", "Animal Friends Show", "12:00 PM and 2:30 PM"); break;
+			
+			case 4: showSchedule = String.format("The %s is scheduled for %s", "Lion Feeding", "9 AM and 3 PM"); break;
+			
+			case 5: showSchedule = String.format("The %s is scheduled for %s", "Zoo Theatre", "9 AM, 12:30PM and 3 PM"); break;
+			
+			default: showSchedule = "That is not a valid show ID";
+			
+			
+			}
+			
+			return showSchedule;
+			
+		}
+		// Made by Q
+		// returns true if the customer's age is less than 13 and the day is Sunday
+		public static boolean isFreeIce(int age, String day) {
+			
+			return (age < 13 && day.equals("Sunday"))?(true):(false);
+			
+		}
+		
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
