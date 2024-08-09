@@ -32,10 +32,8 @@ public class Zoo_tickets {
 	public static float calculatePrice(int childTickets, int adultTickets, String month) {
 		// Price of the tickets without discount.
 		float ticketsPrice = (childTickets * 18) + (adultTickets * 25);
-		
-		ticketsPrice -= ticketsPrice * getDiscount(month);
-		
-		return ticketsPrice;
+				
+		return ticketsPrice - ticketsPrice * getDiscount(month);
 	}
 	
 	// Made by Q
