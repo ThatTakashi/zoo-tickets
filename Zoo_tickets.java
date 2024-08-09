@@ -40,7 +40,7 @@ public class Zoo_tickets {
 		
 		// Made by Q
 		// Takes in a ShowID and returns a string with the 
-		// show name and times it is performed
+		// show name and times it is performed so it can be printed
 		
 		public static String printShowSchedule(int showId) {
 			
@@ -70,7 +70,7 @@ public class Zoo_tickets {
 		// returns true if the customer's age is less than 13 and the day is Sunday
 		public static boolean isFreeIce(int age, String day) {
 			
-			return (age < 13 && day.equals("Sunday"))?(true):(false);
+			return age < 13 && day.equals("Sunday");
 			
 		}
 		
