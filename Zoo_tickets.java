@@ -74,26 +74,26 @@ public class Zoo_tickets {
 		
 	}
 	
-	public static int printReceipt(int childTickets, int adultTickets, String month, float total) {
+	public static int printReceipt(int childTickets, int adultTickets, String month, float total, int discountPrice) {
 		int ticketReceipt = 0;
 		
-		System.out.print("|*****************************************|\n" +
-		"|           Item |      Quantity |  Price |\n" +
-		"|*****************************************|\n");
+		System.out.print("|*******************************************|\n" +
+		"|           Item |      Quantity |    Price |\n" +
+		"|*******************************************|\n");
 		
-		System.out.printf("|Adult           |     %d x 25NZD | " + adultTickets * 25 + " NZD |" + "\n", adultTickets);
+		System.out.printf("|Adult           |     %d x 25NZD |" + adultTickets * 25 + "     NZD|" + "\n", adultTickets);
 		
-		System.out.printf("|Child           |     %d x 18NZD | " + childTickets * 18 + " NZD |" + "\n", childTickets);
+		System.out.printf("|Child           |     %d x 18NZD |" + childTickets * 18 + "     NZD|" + "\n", childTickets);
 		
-		System.out.printf("|Discount        |     %d x 18NZD | " + childTickets * 18 + " NZD |" + "\n", childTickets);
+		System.out.printf("|Discount        |         " + discountPrice + "NZD |-" + discountPrice + "    NZD|" + "\n", childTickets);
 		
-		System.out.print("|*****************************************|\n");
+		System.out.print("|*******************************************|\n");
 		
-		System.out.printf("|                    Total Price | $%.2f |\n", total);
+		System.out.printf("|                    Total Price |%.2f NZD |\n", total);
 		
-		System.out.print("|*****************************************|\n");
+		System.out.print("|*******************************************|\n");
 		
-		
+		System.out.printf("Ticket bought in %s", month);
 		
 		return ticketReceipt;
 	}
@@ -105,7 +105,8 @@ public class Zoo_tickets {
 		// Lines below are just for testing the methods
 		float totalPrice = calculatePrice(3, 2, "February");
 		int percentage = (int)(getDiscount("February") * 100);
-		int receipt = printReceipt(3, 2, "Febuary", totalPrice);
+		int receipt = printReceipt(3, 2, "Febuary", totalPrice, percentage);
+		
 	}
 
 }
