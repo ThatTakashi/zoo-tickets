@@ -74,6 +74,8 @@ public class Zoo_tickets {
 		
 	}
 	
+	// Made by Aidan
+	// Displays a breakdown of all fees as well as any applicable discounts and displays the total cost of the tickets
 	public static int printReceipt(int childTickets, int adultTickets, String month, float total, int discountPrice) {
 		int ticketReceipt = 0;
 		
@@ -85,7 +87,13 @@ public class Zoo_tickets {
 		
 		System.out.printf("|Child           |     %d x 18NZD |" + childTickets * 18 + "     NZD|" + "\n", childTickets);
 		
-		System.out.printf("|Discount        |         " + discountPrice + "NZD |-" + discountPrice + "    NZD|" + "\n", childTickets);
+		switch (discountPrice) {
+			case 0:
+				break;
+			default:
+				System.out.printf("|Discount        |         " + discountPrice + "NZD |-" + discountPrice + "    NZD|" + "\n");
+		}
+		
 		
 		System.out.print("|*******************************************|\n");
 		
@@ -100,8 +108,7 @@ public class Zoo_tickets {
 		
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+
 		// Lines below are just for testing the methods
 		float totalPrice = calculatePrice(3, 2, "February");
 		int percentage = (int)(getDiscount("February") * 100);
