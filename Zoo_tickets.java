@@ -83,7 +83,6 @@ public class Zoo_tickets {
 	// Takes in the output from each method and displays a breakdown of all fees as well as 
 	// any applicable discounts and displays the total cost of the tickets
 	public static int printReceipt(int childTickets, int adultTickets, String month, float total, int discountPrice) {
-		int ticketReceipt = 0;
 		
 		System.out.print("|*******************************************|\n" +
 		"|           Item |      Quantity |    Price |\n" +
@@ -109,8 +108,7 @@ public class Zoo_tickets {
 		System.out.print("|*******************************************|\n");
 		
 		System.out.printf("Ticket bought in %s", month);
-		
-		return ticketReceipt;
+
 	}
 		
 	// Made by Aidan
@@ -130,7 +128,7 @@ public class Zoo_tickets {
 		System.out.println("Does the second child get a free ice-cream?: " + isFreeIce(12, "Sunday") + "\n");
 		
 		// Prints a receipt showing a breakdown of each items cost as well as the total cost
-		int receipt = printReceipt(3, 2, "January", totalPrice, percentage);
+		printReceipt(3, 2, "January", totalPrice, percentage);
 		
 	}
 
