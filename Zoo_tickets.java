@@ -82,7 +82,7 @@ public class Zoo_tickets {
 	// Made by Aidan
 	// Takes in the output from each method and displays a breakdown of all fees as well as 
 	// any applicable discounts and displays the total cost of the tickets
-	public static int printReceipt(int childTickets, int adultTickets, String month, float total, int discountPrice) {
+	public static void printReceipt(int childTickets, int adultTickets, String month, float total, int discountPrice) {
 		
 		System.out.print("|*******************************************|\n" +
 		"|           Item |      Quantity |    Price |\n" +
