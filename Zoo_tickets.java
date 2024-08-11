@@ -1,3 +1,10 @@
+// Zoo ticket program
+
+// Takes multiple values such as the number of tickets as well as
+// if the customer gets a discount and displays a breakdown to the customer
+
+// Made by Q, Ike and Aidan
+
 
 public class Zoo_tickets {
 	// To get percentage for printReceipt:
@@ -73,7 +80,8 @@ public class Zoo_tickets {
 	}
 	
 	// Made by Aidan
-	// Displays a breakdown of all fees as well as any applicable discounts and displays the total cost of the tickets
+	// Takes in the output from each method and displays a breakdown of all fees as well as 
+	// any applicable discounts and displays the total cost of the tickets
 	public static int printReceipt(int childTickets, int adultTickets, String month, float total, int discountPrice) {
 		int ticketReceipt = 0;
 		
@@ -81,6 +89,7 @@ public class Zoo_tickets {
 		"|           Item |      Quantity |    Price |\n" +
 		"|*******************************************|\n");
 		
+		// Prints the fees for each item (Adult Tickets, Child Tickets and Discounts if applicable)
 		System.out.printf("|Adult           |     %d x 25NZD |" + adultTickets * 25 + "     NZD|" + "\n", adultTickets);
 		
 		System.out.printf("|Child           |     %d x 18NZD |" + childTickets * 18 + "     NZD|" + "\n", childTickets);
@@ -92,7 +101,7 @@ public class Zoo_tickets {
 				System.out.printf("|Discount        |         " + discountPrice + "NZD |-" + discountPrice + "    NZD|" + "\n");
 		}
 		
-		
+		// Print the total price for all the tickets taking any discounts into account
 		System.out.print("|*******************************************|\n");
 		
 		System.out.printf("|                    Total Price |%.2f NZD |\n", total);
@@ -104,13 +113,24 @@ public class Zoo_tickets {
 		return ticketReceipt;
 	}
 		
-
+	// Made by Aidan
+	// Runs through each method in order to produce the expected output
 	public static void main(String[] args) {
 
-		// Lines below are just for testing the methods
-		float totalPrice = calculatePrice(3, 2, "February");
-		int percentage = (int)(getDiscount("February") * 100);
-		int receipt = printReceipt(3, 2, "Febuary", totalPrice, percentage);
+		// Calculates the total price for all tickets
+		float totalPrice = calculatePrice(3, 2, "January");
+		
+		// Calculates the discount price based on the month
+		int percentage = (int)(getDiscount("January") * 100);
+		
+		// Prints the show schedule for the Splash Safari
+		System.out.println(printShowSchedule(2) + "\n");
+		
+		// Checks if the second child is able to get a free ice-cream
+		System.out.println("Does the second child get a free ice-cream?: " + isFreeIce(12, "Sunday") + "\n");
+		
+		// Prints a receipt showing a breakdown of each items cost as well as the total cost
+		int receipt = printReceipt(3, 2, "January", totalPrice, percentage);
 		
 	}
 
